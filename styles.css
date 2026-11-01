@@ -17,3 +17,4 @@ header{position:sticky;top:0;z-index:12;background:#fcf8f3ed;backdrop-filter:blu
 @media(max-width:360px){header nav{gap:10px;font-size:9px}.hero h1{font-size:43px}.opening-frame h1{font-size:37px}}
 @media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none}*,*:before,*:after{animation:none!important;transition:none!important}}
 @media(max-width:700px){.hero-art .floral{right:0;font-size:130px;bottom:45px}}
+.developer-credit{margin-top:26px!important;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:#796356}.developer-credit strong{font-weight:600;color:var(--rose)}
