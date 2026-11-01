@@ -1,5 +1,39 @@
 # A birthday surprise for Dellareese ♡
 
+## Dellareese’s Little Corner of Happiness — version 2
+
+The original birthday experience remains intact. At the end of it, three permanent tools provide a place to keep memories and return for encouragement. Follow the opening-screen shortcut, use the navigation link, or bookmark the deployed address with `#happiness`. “Make this my starting place” saves a preference in this browser so future visits skip the birthday reveal. “Celebrate again” still returns to the birthday greeting.
+
+### My Little Happiness Journal
+
+Write a title, date, optional mood and entry. Drafts save to IndexedDB as you type and return on refresh. Save an entry to add it to the timeline, then edit or delete it later. Search titles and contents, browse the monthly calendar (dots mark entry dates), or choose Random happy memory. Search and selected calendar dates combine; Show all dates clears the date filter.
+
+Export journal backup downloads readable JSON. Keep this file private. Import journal backup validates the file and merges it after confirmation; matching IDs are replaced, while other entries remain. A complete current draft can optionally be included as a separate backup entry. Clear journal requires typing `CLEAR JOURNAL` and clears both saved entries and the draft. Deletions cannot be reversed without your backup.
+
+### Daily Blessings
+
+`blessings.js` contains 365 distinct original messages: encouragement, gratitude, affirmations and gentle prayers, without scripture quotations. A deterministic 365-day cycle follows the South African calendar, including leap days; consecutive days always get different messages. It repeats after 365 days, rather than skipping or duplicating a leap-day blessing. The page checks for midnight changes every second and when it becomes visible again. Save favourites to IndexedDB, remove them, copy a message, or open a WhatsApp sharing link. Sharing opens a composer; it does not send automatically. The browser may require opening this website directly in Safari or Chrome rather than inside WhatsApp.
+
+### Encrypted letters to a future self
+
+Write one or more letters, each with a title, future opening date, password and confirmation. The default is 2 November 2027 (her 39th birthday); after that date passes, the default moves to tomorrow. A long memorable passphrase is encouraged. Unsealed letters remain only in the open page; they are not saved as plaintext drafts. Leaving with unfinished writing triggers a browser warning when supported.
+
+Web Crypto derives a non-extractable 256-bit AES-GCM key from the password using PBKDF2-HMAC-SHA-256. Each letter receives a fresh cryptographic 16-byte salt and 12-byte IV. A local calibration targets roughly 500ms, bounded between 600,000 and 1,500,000 iterations. The key and password are never persisted. The authenticated data binds the envelope ID, title, creation date, opening date and iteration count to the ciphertext. Modified ciphertext or bound metadata fails authentication.
+
+IndexedDB stores ciphertext and envelope metadata, including whether the letter has been opened before. The letter stays encrypted at rest even after opening. On or after its opening date in Africa/Johannesburg, enter the password to read it; Close and lock removes readable content from the page. Reading does not replace the encrypted copy. Before that date, the normal interface provides only a sealed envelope and countdown.
+
+**The date is a user-interface promise, not a security boundary.** A changed device clock or modified client code can bypass it. Encryption provides confidentiality, dependent on the chosen password. This is not a claim that the entire website or the journal is password-protected. HTTPS is required in production; localhost is also supported by Web Crypto. No private content, password or key is sent to GitHub or a server.
+
+Export encrypted letters produces a JSON backup containing only encrypted letters and visible envelope metadata. Import validates and restores these records, including on another device. Matching IDs are replaced only after confirmation. The original password is still required. Forgotten passwords cannot be reset or recovered, and lost data cannot be restored automatically. Titles and dates are not secret, so avoid sensitive details in titles.
+
+### Local storage and privacy
+
+All personal records live in IndexedDB database `dellareese-happiness`, with separate `journal`, `letters`, `favourites` and `settings` stores. Nothing is committed to the repository. Journal contents and drafts are readable in local browser storage. Anyone using that browser profile may access them. Private browsing, browser data clearing, device changes, storage eviction and browser restrictions can remove or isolate data. Closing a normal browser session usually preserves data, but no static site can guarantee it indefinitely: export regular backups. Changing the hosting origin will require importing backups. Other sites hosted under the same origin can access that origin’s storage; use a trusted GitHub account and hosting origin. No analytics, tracking or private-data network APIs are included. Optional Google Fonts still load public font files.
+
+### Upgrade validation
+
+Run `node --test tests/*.test.mjs` and `node scripts/build.mjs`. Tests cover original birthday calculations, 365 unique messages, midnight and leap-day rotation, opening-day boundaries, password policy, correct and wrong passwords, authenticated tamper rejection, unique salts/IVs, encrypted JSON restoration and malformed imports. Browser checks use disposable sample records to verify draft recovery, journal saving/editing/search, reopening persistence, favourites and letter sealing/export. No real personal writing is needed for testing.
+
 A personal 38th birthday gift from Braedon & Jadine, celebrating 2 November 2026. A static, mobile-first website with a surprise reveal, live lifetime counters, a letter, photo galleries and lightbox, interactive cake, 30-second heart game, 38 wishes, and a final gift.
 
 ## Run locally

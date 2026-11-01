@@ -1,5 +1,8 @@
 import c from './config.js';import {lifetime,celebration} from './time.js';
+import './corner.js';
 const $=s=>document.querySelector(s);const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e};
+if(c.heroPhoto?.src){const portrait=el('img',null,'hero-portrait');portrait.src=c.heroPhoto.src;portrait.alt=c.heroPhoto.alt;portrait.width=900;portrait.height=1000;portrait.fetchPriority='high';$('.hero-art').prepend(portrait);$('.hero-art').classList.add('has-portrait');portrait.onerror=()=>{portrait.remove();$('.hero-art').classList.remove('has-portrait')}}
+if(c.familyGalleryTitle)$('#family-gallery').previousElementSibling.textContent=c.familyGalleryTitle;
 document.querySelectorAll('[data-name]').forEach(e=>e.textContent=c.name);document.querySelectorAll('[data-senders]').forEach(e=>e.textContent=c.senders);$('#main-message').textContent=c.mainMessage;document.title=`For ${c.name}, with love · ${c.birthdayNumber}`;$('.hero h1').firstChild.textContent=`Happy ${c.birthdayNumber}th`;$('.age-art').textContent=c.birthdayNumber;$('.art-label').textContent=`${c.name.toUpperCase()} · A BEAUTIFUL CHAPTER`;$('.brand').firstChild.textContent=c.name[0];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function confetti(x=50,y=5,n=45){if(reduced)return;for(let i=0;i<n;i++){const p=el('span',['♡','✧','❀','·'][i%4],'particle');p.style.left=`${Math.max(0,Math.min(98,x+(Math.random()-.5)*65))}%`;p.style.top=`${y}%`;p.style.color=['#af6876','#b18e54','#d59f8e'][i%3];p.style.animationDelay=`${Math.random()*.35}s`;$('#particles').append(p);setTimeout(()=>p.remove(),3300)}}
