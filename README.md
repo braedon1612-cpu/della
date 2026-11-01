@@ -2,13 +2,7 @@
 
 ## Dellareese’s Little Corner of Happiness — version 2
 
-The original birthday experience remains intact. At the end of it, three permanent tools provide a place to keep memories and return for encouragement. Follow the opening-screen shortcut, use the navigation link, or bookmark the deployed address with `#happiness`. “Make this my starting place” saves a preference in this browser so future visits skip the birthday reveal. “Celebrate again” still returns to the birthday greeting.
-
-### My Little Happiness Journal
-
-Write a title, date, optional mood and entry. Drafts save to IndexedDB as you type and return on refresh. Save an entry to add it to the timeline, then edit or delete it later. Search titles and contents, browse the monthly calendar (dots mark entry dates), or choose Random happy memory. Search and selected calendar dates combine; Show all dates clears the date filter.
-
-Export journal backup downloads readable JSON. Keep this file private. Import journal backup validates the file and merges it after confirmation; matching IDs are replaced, while other entries remain. A complete current draft can optionally be included as a separate backup entry. Clear journal requires typing `CLEAR JOURNAL` and clears both saved entries and the draft. Deletions cannot be reversed without your backup.
+The original birthday experience remains intact. The journal was removed at your request; Daily Blessings and encrypted Future Letters remain. Previously stored journal records are left untouched on the device, but the journal interface no longer appears. At the end of it, two permanent tools provide a place to keep memories and return for encouragement. Follow the opening-screen shortcut, use the navigation link, or bookmark the deployed address with `#happiness`. “Make this my starting place” saves a preference in this browser so future visits skip the birthday reveal. “Celebrate again” still returns to the birthday greeting.
 
 ### Daily Blessings
 
