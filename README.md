@@ -35,20 +35,20 @@ Add a licensed audio file at `public/music/birthday.mp3`, then enable `music.ena
 
 ## Publish free with GitHub Pages
 
-1. Create a **public** GitHub repository named `machine-birthday-surprise`. The website contains personal birthday details, so only upload photographs you want publicly accessible.
+1. Create a **public** GitHub repository named `della`. The website contains personal birthday details, so only upload photographs you want publicly accessible.
 2. From this folder:
 
 ```sh
 git init -b main
 git add .
 git commit -m "Build Dellareese's birthday surprise"
-git remote add origin https://github.com/YOUR-USERNAME/machine-birthday-surprise.git
+git remote add origin https://github.com/YOUR-USERNAME/della.git
 git push -u origin main
 ```
 
 3. On GitHub open **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 4. Open **Actions → Deploy birthday surprise**. If the first run happened before Pages was enabled, choose **Run workflow**.
-5. Once the deployment succeeds, the link is `https://YOUR-USERNAME.github.io/machine-birthday-surprise/`.
+5. Once the deployment succeeds, the link is `https://YOUR-USERNAME.github.io/della/`.
 
 All asset URLs are relative (`./` implicitly), so the project repository base path works without a Vite base setting. The included workflow runs date tests, builds, uploads `dist`, and deploys automatically on every push to `main`. Do not commit `dist` or deploy the source to a separate branch.
 
