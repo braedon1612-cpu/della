@@ -4,8 +4,7 @@ export default {
  letter:[`Today is all about celebrating the wonderful person you are and the love, kindness, and happiness you bring to the people around you.`,`We hope this new chapter of your life is filled with beautiful memories, good health, endless blessings, laughter, and all the happiness your heart deserves.`,`May every dream you carry find its way into reality, and may you always have countless reasons to smile.`,`We wanted to create something a little different for your special day — something made with love, just for you.`,`Thank you for being such a special part of our lives.`],
  finalMessage:[`No website could ever contain all the love and good wishes we have for you.`,`We hope your 38th birthday is as special and wonderful as you are.`,`May God bless you with good health, peace, happiness, and many more beautiful years ahead.`,`Happy Birthday! 🎂❤️`],
  music:{enabled:false,src:'public/music/birthday.mp3'},
- heroPhoto:{src:'public/photos/floral-portrait.webp',alt:'Dellareese in a pink floral blouse, standing on a balcony'},
- familyGalleryTitle:'More moments to treasure.',
+ heroPhoto:null,
  photos:[
   {src:'public/photos/among-the-flowers.webp',caption:'A beautiful moment',alt:'Dellareese in a gold dress beside a floral backdrop',group:'memories'},
   {src:'public/photos/a-little-red-and-gold.webp',caption:'A little red, a little radiance',alt:'Dellareese wearing red, smiling in a car',group:'memories'},
